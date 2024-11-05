@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algebraic Solver</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 30px;
+        }
+        #response {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #4CAF50;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 60%;
+            margin-top: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            margin-left: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chat with the Bot</h1>
+    <input type="text" id="userInput" placeholder="Type a message..." />
+    <button onclick="getResponse()">Send</button>
+    <p id="response"></p>
+
+    <script>
+        async function getResponse() {
+            const inputText = document.getElementById('userInput').value;
+            const responseElement = document.getElementById('response');
+
+            if (!inputText.trim()) {
+                responseElement.innerHTML = "Please enter a message.";
+                return;
+            }
+
+            const response = await fetch('/api/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ text: inputText })
+            });
+
+            const data = await response.json();
+            responseElement.innerHTML = data.response;
+        }
+    </script>
+</body>
+</html>
