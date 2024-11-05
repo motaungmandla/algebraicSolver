@@ -1,0 +1,38 @@
+{
+  "name": "chat-model",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "vercel build"
+  },
+  "dependencies": {
+    "tensorflow": "latest",
+    "express": "^4.17.1",
+    "cors": "^2.8.5",
+    "body-parser": "^1.19.0"
+  },
+  "description": "A chatbot for my calculus website project to give general guide...",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/motaungmandla/calculusWebsite.git"
+  },
+  "keywords": [
+    "ODEs",
+    "Calculus",
+    "algebra",
+    "symbolic",
+    "math",
+    "mathematics",
+    "solver",
+    "integral",
+    "equations",
+    "equations"
+  ],
+  "author": "Motaung Mandla",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/motaungmandla/calculusWebsite/issues"
+  },
+  "homepage": "https://github.com/motaungmandla/calculusWebsite#readme"
+}
